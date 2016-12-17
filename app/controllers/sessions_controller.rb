@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
     end
     
-    redirect_to notes_path
+    redirect_to user_notes_path(user)
   end
 
   # Method to destroy a user session

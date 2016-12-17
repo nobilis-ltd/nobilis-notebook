@@ -3,3 +3,6 @@
 // 
 // Bootstrap v3.3.7
 //= require bootstrap.min.js
+// 
+// Markdown-JS library
+//= require markdown.js

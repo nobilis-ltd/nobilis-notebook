@@ -5,7 +5,7 @@
     </a>
   </li>
   <li class="menu-item">
-    <a href="#" data-toggle="tooltip" data-placement="right" title="New Note">
+    <a href="<%= new_user_note_path(@current_user) %>" data-toggle="tooltip" data-placement="right" title="New Note">
       <span class="glyphicon glyphicon-pencil"></span>
     </a>
   </li>
@@ -40,7 +40,7 @@
         <p>Are you sure you wish to permanently delete your account?</p>
       </div>
       <div class="modal-footer">
-        <button class="btn grey-bg" data-dismiss="modal">Close</button>
+        <button class="btn grey-bg" data-dismiss="modal">Cancel</button>
         <%= link_to 'Delete Account', user_path(id: current_user.to_param), class: 'btn red-bg', method: :delete %>
       </div>
     </div>
