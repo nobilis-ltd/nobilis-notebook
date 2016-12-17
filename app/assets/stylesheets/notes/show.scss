@@ -1,0 +1,16 @@
+body.notes.show div.rendered-note {
+  font-size: 1.2em;
+  line-height: 1.6;
+
+  h1 { font-size: 2.074em; }
+  h2 { font-size: 1.728em; }
+  h3 { font-size: 1.44em; }
+  h4 { font-size: 1.2em; }
+  a { 
+    color: $red;
+
+    &:hover, &:active, &:focus ,&:visited {
+      color: $dark_red;
+    }
+  }
+}

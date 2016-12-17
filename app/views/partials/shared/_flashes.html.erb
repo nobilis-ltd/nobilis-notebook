@@ -1,9 +1,16 @@
-<% if flash[:danger] %>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="alert alert-danger">
-        <%= flash[:danger] %>
-      </div>
-    </div>
-  </div>
+<!-- 
+  Allowed Flash Types: "error", "success", "warning", "info"
+-->
+<% if flash %>
+  <% flash.each do |flash_type, text|%>
+    <script>
+      $.toast({
+          text: "<%= text %>",
+          icon: "<%= flash_type %>",
+          loader: false,
+          position: 'top-center',
+          hideAfter: 5000
+      })
+    </script>
+  <% end %>
 <% end %>

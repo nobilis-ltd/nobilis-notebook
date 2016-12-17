@@ -1,0 +1,22 @@
+.jq-toast-wrap {
+  .jq-toast-single {
+    font-family: "Rubik", sans-serif;
+    font-size: 1em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: $button-roundness;
+
+    .close-jq-toast-single {
+      margin: 12px 2px 0 0;
+      font-size: 1.5em;
+    }
+
+    &.jq-icon-success {
+      background-color: $dark_green;
+    }
+
+    &.jq-icon-error {
+      background-color: $dark_red;
+    }
+  }
+}
