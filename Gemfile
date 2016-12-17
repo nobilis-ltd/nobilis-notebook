@@ -26,6 +26,9 @@ group :development, :test do
   # for factories
   gem 'factory_girl_rails'
   gem 'faker'
+
+  # For loading of environment variables from .env file
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -47,7 +50,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
@@ -62,3 +64,6 @@ gem 'hashids', '~> 1.0', '>= 1.0.2'
 
 # For selective hashids models
 gem 'acts_as_hashids'
+
+# For Google authorization
+gem 'omniauth-google-oauth2'
