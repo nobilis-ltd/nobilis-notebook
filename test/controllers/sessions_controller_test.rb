@@ -9,7 +9,7 @@ class SessionsControllerTest < ActionController::TestCase
     end
     
     assert_not session[:user_id] == nil
-    assert_redirected_to root_path
+    assert_redirected_to notes_path
   end
 
   test "should get destroy" do
