@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-6 form-group">
+      <%= f.label :title, 'Note title' %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="col-sm-6 text-right form-actions">
+      <%= f.submit btn_prompt, class: 'btn btn-md dark-green-bg' %>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+    <div id="note-input" class="col-sm-6">
+      <div class="form-group">
+        <p>Prepare your note below</p>
+        <%= f.text_area :content, {class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div id="note-preview" class=" col-sm-6">
+      <p>Preview</p>
+      <div class="preview"></div>
+    </div>
+  </div>
+</div>

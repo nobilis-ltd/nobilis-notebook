@@ -15,7 +15,7 @@
   // modals and cards
   $modal_roundness: 10px;
 
-// fonts
+// Fonts
   @import 'http://fonts.googleapis.com/css?family=Rubik';
   @font-face{
     font-family:'Glyphicons Halflings';
@@ -23,7 +23,7 @@
     src: url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff2') format('woff2'),url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff') format('woff'),url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')
   }
 
-// top level elements (html, body)
+// Top level elements (html, body)
   html { 
     font-size: 1em;
     margin: 0;
@@ -136,7 +136,7 @@
     color: $ultra_light_grey;
   }
 
-// buttons
+// Buttons
   .btn {
     border: none;
     box-shadow: none;
@@ -182,7 +182,7 @@
     }
   }
 
-// alerts
+// Alerts
   .alert {
     border-radius: $button_roundness;
     border: none;
@@ -198,7 +198,7 @@
     }
   }
 
-// modals
+// Modals
   div.modal-content {
     background: $ultra_light_grey;
     border-radius: $modal_roundness;
@@ -216,6 +216,29 @@
   .margin-bottom-200 { margin-bottom: 200px; }
   .margin-top-50 { margin-top: 50px; }
   .margin-bottom-50 { margin-bottom: 50px; }
+
+// Breadcrumbs
+  .breadcrumbs {
+    a {
+      color: $grey;
+      
+      &:hover, &:active, &:focus {
+        color: $dark_grey;
+        text-decoration: none
+      }
+    }
+  }
+
+// General page header
+  .page-header {
+    border-bottom: thin solid $light_grey;
+    margin: 30px 0 10px 0;
+    padding-bottom: 10px;
+
+    h3 {
+      margin: 0;
+    }
+  }
 
 // Other Styles
   .turbolinks-progress-bar {

@@ -15,6 +15,8 @@
 class User < ActiveRecord::Base
   acts_as_hashids secret: "umteenth-user", length: 6
 
+  has_many :notes
+
   # Method to check if the user is already saved in the database; creates a new user record if not.
   def self.from_omniauth auth_hash
     # find user if they already exist or create a new user

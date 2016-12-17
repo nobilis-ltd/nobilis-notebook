@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :notes
-  resources :users
+  
+  resources :users do
+    resources :notes
+  end
 
   # Routes for Google auth
   get "auth/:provider/callback" => "sessions#create"

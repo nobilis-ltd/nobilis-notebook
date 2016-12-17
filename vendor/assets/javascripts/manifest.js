@@ -3,6 +3,9 @@
 // 
 // Bootstrap v3.3.7
 //= require bootstrap.min.js
+// 
+// Markdown-JS library
+//= require markdown.js
 //
 // Jquery toast plugin for flash messages
 // https://github.com/kamranahmedse/jquery-toast-plugin/blob/master/dist/jquery.toast.min.js

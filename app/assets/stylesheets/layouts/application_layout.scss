@@ -1,7 +1,7 @@
 // application layout
 body.application_layout {
   background: $ultra_light_grey;
-  $sidebar_width: 70px;
+  $sidebar_width: 60px;
   margin-left: $sidebar_width;
 
   div.sidebar {
@@ -18,7 +18,7 @@ body.application_layout {
     height: 100vh;
     
     li.menu-item {
-      $menu_item_height: 70px;
+      $menu_item_height: 60px;
 
       height: $menu_item_height;
       text-align: center;

@@ -10,7 +10,7 @@
     <p class="text-center margin-top-50">
       <% if user_logged_in? %>
         <span>Signed in as <u><%= current_user.name %></u> <%= link_to '(Not you?)', signout_path %></span><br><br>
-        <%= link_to 'Go to your notes', notes_path, class:"btn btn-lg red-bg" %><br><br>
+        <%= link_to 'Go to your notes', user_notes_path(current_user), class:"btn btn-lg red-bg" %><br><br>
       <% else %>
         <%= link_to '/auth/google_oauth2', class:"btn btn-lg red-bg" do %>
           <small><i class="socicon socicon-google"></i></small> 
