@@ -4,7 +4,7 @@
   $dark_red: darken($red, 10);
   $green: #2ecc71;
   $dark_green: #27ae60;
-  $ultra_light_grey: #f0f0f0;
+  $ultra_light_grey: #FFF3F1;
   $light_grey: #dadada ;
   $grey: #777 ;
   $dark_grey: #333; 
@@ -166,6 +166,7 @@
 
 // modals
   div.modal-content {
+    background: $ultra_light_grey;
     border-radius: $modal_roundness;
     padding: 2 * $modal_roundness;
   }
