@@ -3,3 +3,8 @@ rvm:
   - 2.2.6
 notifications:
   slack: nobilis-ke:DqxT21PsCRH3b9VtlhQfS6fc
+deploy:
+  provider: heroku
+  api_key: cf6119ac-1e43-4695-9c10-b144c92c6051
+  app:
+    staging: staging-nobilis-notebook
