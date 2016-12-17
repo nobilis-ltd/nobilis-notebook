@@ -4,8 +4,15 @@ body.notes.index {
     cursor: pointer;
     height: 200px;
 
+    &.new {
+      background: darken(whitesmoke, 3); 
+      &:hover {
+        background: whitesmoke;
+      }
+    }
+
     &:hover {
-      background: $ultra_light_grey;
+      background: darken(whitesmoke, 3);
     }
   }
 }
