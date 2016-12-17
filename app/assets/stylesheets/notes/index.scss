@@ -2,7 +2,12 @@ body.notes.index {
   .note {
     background: whitesmoke;
     cursor: pointer;
-    height: 200px;
+    height: 205px;
+
+    h4 {
+      letter-spacing: 0.5px;
+      line-height: 1.4em;
+    }
 
     &.new {
       background: darken(whitesmoke, 3); 

@@ -161,6 +161,13 @@
       }
     }
     
+    &.dark-green-bg {
+      &:hover {
+        background: darken($dark_green, 3);
+        color: white;
+      }
+    }
+    
     &.grey-bg {
       &:hover {
         background: $dark_grey;
