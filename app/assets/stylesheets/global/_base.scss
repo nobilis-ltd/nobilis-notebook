@@ -4,7 +4,7 @@
   $dark_red: darken($red, 10);
   $green: #2ecc71;
   $dark_green: #27ae60;
-  $ultra_light_grey: #FFFAFA;
+  $ultra_light_grey: lighten(#FFF8DC, 3);
   $light_grey: #dadada ;
   $grey: #777 ;
   $dark_grey: #333; 
@@ -223,7 +223,7 @@
   }
 
   hr {
-    border-color: lighten($light_grey, 10);
+    border-color: lighten($light_grey, 5);
   }
 
   div.card {
