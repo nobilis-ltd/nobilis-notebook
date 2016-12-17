@@ -10,9 +10,9 @@
     </a>
   </li>
   <li class="menu-item">
-    <a href="#" data-toggle="tooltip" data-placement="right" title="My Notes">
+    <%= link_to notes_path, title: "My Notes", data:{ toggle: "tooltip", placement: "right" } do %>
       <span class="glyphicon glyphicon-list-alt"></span>
-    </a>
+    <% end %>
   </li>
 
   <div class="bottom-menu-items">
