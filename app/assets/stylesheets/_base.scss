@@ -101,7 +101,7 @@
     box-shadow: none;
     border-radius: 7px;
 
-    &:hover {
+    &:hover, &:focus, &:active {
       color: inherit;
     }
 
@@ -112,7 +112,17 @@
       }
     }
   }
-  
+
+// alerts
+  .alert {
+    border: none;
+
+    &.alert-danger {
+      background: $dark_red;
+      color: white;
+    }
+  }
+
 // Utility Classes for margin and padding
   .no-margin {
     margin: 0;
