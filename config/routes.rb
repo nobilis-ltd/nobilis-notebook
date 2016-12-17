@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'notes/index'
-  get 'site/home'
+  resources :notes
+  resources :users
 
-  # Routes for Google auth 
+  # Routes for Google auth
   get "auth/:provider/callback" => "sessions#create"
-  get "auth/failure" => redirect("/")
+  get "auth/failure" => "sessions#auth_failure"
   get "signout" => "sessions#destroy", as: :signout
 
-  resource :sessions, only: [:create, :destroy]
+  resources :sessions, only: [:create, :destroy]
 
   root 'site#home'
 end

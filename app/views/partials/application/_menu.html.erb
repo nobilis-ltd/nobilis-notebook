@@ -1,0 +1,48 @@
+<div class="sidebar">
+  <li class="menu-item">
+    <a href="#" data-toggle="tooltip" data-placement="right" title="Signed in as <%= current_user.name %>">
+      <span class="glyphicon glyphicon-user"></span>
+    </a>
+  </li>
+  <li class="menu-item">
+    <a href="#" data-toggle="tooltip" data-placement="right" title="New Note">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </a>
+  </li>
+  <li class="menu-item">
+    <a href="#" data-toggle="tooltip" data-placement="right" title="My Notes">
+      <span class="glyphicon glyphicon-list-alt"></span>
+    </a>
+  </li>
+
+  <div class="bottom-menu-items">
+    <li class="menu-item">
+      <%= link_to signout_path, title: "Log Out", data:{ toggle: "tooltip", placement: "right" } do %>
+        <span class="glyphicon glyphicon-log-out"></span>
+      <% end %>
+    </li>
+    <li class="menu-item">
+      <a href="#" data-toggle="modal" data-target="#account_deletion_modal" data-placement="right" title="Delete Account">
+        <span class="glyphicon glyphicon-trash"></span>
+      </a>
+    </li>
+  </div>
+</div>
+
+
+<!-- Delete Account Modal -->
+<div class="modal" id="account_deletion_modal">
+  <div class="modal-dialog">
+    <div class="modal-content margin-top-200">
+      <div class="modal-body">
+        <p>You are about to permanently delete your account on Notebook.</p>
+        <p>All your notes and notebooks will be deleted. Users with whom you have shared notes and notebooks will no longer be able to view them.</p>
+        <p>Are you sure you wish to permanently delete your account?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn grey-bg" data-dismiss="modal">Close</button>
+        <%= link_to 'Delete Account', user_path(id: current_user.to_param), class: 'btn red-bg', method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
