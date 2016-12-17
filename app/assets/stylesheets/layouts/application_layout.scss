@@ -1,0 +1,60 @@
+// application layout
+body.application_layout {
+  background: $ultra_light_grey;
+
+  $sidebar_width: 70px;
+
+  margin-left: $sidebar_width;
+
+  div.sidebar {
+    $padding_top_bottom: 20px;
+
+    padding: $padding_top_bottom 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $sidebar_width;
+    background: $dark_grey;
+    border-right: $ultra_dark_grey;
+    color: white;
+    height: 100vh;
+    
+    li.menu-item {
+      $menu_item_height: 70px;
+
+      height: $menu_item_height;
+      text-align: center;
+      list-style-type: none;
+      border-bottom: $ultra_dark_grey;
+
+      a {
+        display: block;
+        width: $sidebar_width;
+        height: $menu_item_height;
+        line-height: $menu_item_height;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        
+        &:hover {
+          background: $ultra_dark_grey;
+        }
+      }
+    }
+
+    div.bottom-menu-items {
+      position: absolute;
+      bottom: $padding_top_bottom;
+    }
+ }
+
+ div.main-container {
+   padding: 50px;
+
+   .holder {
+     background: $ultra_light_grey;
+     border-radius: 20px;
+     padding: 20px;
+   }
+ }
+}

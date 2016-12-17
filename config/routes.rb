@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notes/index'
   get 'site/home'
 
   # Routes for Google auth 
