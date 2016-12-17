@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notebook - by Nobilis</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'partials/mobile_meta_tags' %>
+</head>
+<body class="site_layout <%= controller_name %> <%= action_name %>">
+  <div class="container">
+    <%= yield %>
+
+    <p class="margin-top-50 text-center light-grey-text">
+      &copy; Nobilis 2016 - <%= Date.today.year %>
+    </p>
+  </div>
+</body>
+</html>

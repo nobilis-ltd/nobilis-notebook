@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //
 // Require plugins from /vendor via manifest.js
 //= require manifest.js
+//
+//= require_tree .

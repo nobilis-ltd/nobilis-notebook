@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Notebook</title>
+  <title>Notebook - by Nobilis</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'partials/mobile_meta_tags'%>
 </head>
-<body>
+<body class="application_layout">
+  <div class="sidebar">
+    <li class="menu-item">
+      <a href="#" data-toggle="tooltip" data-placement="right" title="New Note">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="#" data-toggle="tooltip" data-placement="right" title="My Notes">
+        <span class="glyphicon glyphicon-list-alt"></span>
+      </a>
+    </li>
 
-<%= yield %>
+    <div class="bottom-menu-items">
+      <li class="menu-item">
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Log Out">
+          <span class="glyphicon glyphicon-log-out"></span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Delete Account">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </li>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
