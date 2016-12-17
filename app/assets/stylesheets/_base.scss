@@ -1,12 +1,18 @@
-// colors
+// colors & variables
   $primary_color: #de1f26;
   $red: #de1f26;
   $dark_red: darken($red, 10);
+  $green: #2ecc71;
+  $dark_green: #27ae60;
   $ultra_light_grey: #f0f0f0;
   $light_grey: #dadada ;
   $grey: #777 ;
   $dark_grey: #333; 
-  $ultra_dark_grey: #111; 
+  $ultra_dark_grey: #111;
+
+  // used as border-radius for buttons and alerts
+  $button_roundness: 7px;
+  $modal_roundness: 10px;
 
 // fonts
   @import 'http://fonts.googleapis.com/css?family=Rubik';
@@ -69,6 +75,14 @@
     background: $dark_red;
     color: white;
   }
+  .green-bg {
+    background: $green;
+    color: white;
+  }
+  .dark-green-bg {
+    background: $dark_green;
+    color: white;
+  }
   .grey-bg {
     background: $grey;
     color: white;
@@ -88,6 +102,12 @@
   .dark-red-text {
     color: $dark_red;
   }
+  .green-text {
+    color: $green;
+  }
+  .dark-green-text {
+    color: $dark_green;
+  }
   .grey-text {
     color: $grey;
   }
@@ -99,10 +119,11 @@
   .btn {
     border: none;
     box-shadow: none;
-    border-radius: 7px;
+    border-radius: $button_roundness;
 
-    &:hover, &:focus, &:active {
-      color: inherit;
+    &:hover, &:focus, &:active, &:visited {
+      color: white;
+      outline: none;
     }
 
     &.red-bg {
@@ -111,34 +132,54 @@
         color: white;
       }
     }
+
+    &.green-bg {
+      &:hover {
+        background: $dark_green;
+        color: white;
+      }
+    }
+    
+    &.grey-bg {
+      &:hover {
+        background: $dark_grey;
+        color: white;
+      }
+    }
   }
 
 // alerts
   .alert {
+    border-radius: $button_roundness;
     border: none;
 
     &.alert-danger {
       background: $dark_red;
       color: white;
     }
+
+    &.alert-success {
+      background: $dark_green;
+      color: white;
+    }
+  }
+
+// modals
+  div.modal-content {
+    border-radius: $modal_roundness;
+    padding: 2 * $modal_roundness;
   }
 
 // Utility Classes for margin and padding
-  .no-margin {
-    margin: 0;
-  }
-  .padded-top-200 {
-    padding-top: 200px;
-  }
-  .padded-bottom-200 {
-    padding-bottom: 200px;
-  }
-  .margin-top-50 {
-    margin-top: 50px;
-  }
-  .margin-bottom-50 {
-    margin-bottom: 50px;
-  }
+  .no-margin { margin: 0; }
+  .padded-top-200 { padding-top: 200px; }
+  .padded-bottom-200 { padding-bottom: 200px; }
+  .padded-top-50 { padding-top: 50px; }
+  .padded-bottom-50 { padding-bottom: 50px; }
+  .margin-top-200 { margin-top: 200px; }
+  .margin-bottom-200 { margin-bottom: 200px; }
+  .margin-top-50 { margin-top: 50px; }
+  .margin-bottom-50 { margin-bottom: 50px; }
 
 // Other Styles
   .turbolinks-progress-bar {
