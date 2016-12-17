@@ -26,7 +26,7 @@ class NotesControllerTest < ActionController::TestCase
       user_id: user.to_param,
       note: {
         title: 'Another one',
-        content: '*They don\'t want you to succees.*'
+        content: '*They don\'t want you to succeed.*'
       }
     }
     assert_redirected_to user_note_path(user, assigns(:note))
