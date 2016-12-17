@@ -17,26 +17,14 @@ class User < ActiveRecord::Base
 
   # Method to check if the user is already saved in the database; creates a new user record if not.
   def self.from_omniauth auth_hash
-    # find user if they already exist
-    user = self.find_by(uid: auth_hash[:uid], provider: auth_hash[:provider])
-    
-    # return user if found
-    return user if user
-
-    # create user if not
-    user = User.new
+    # find user if they already exist or create a new user
+    user = self.where(uid: auth_hash[:uid], provider: auth_hash[:provider]).first_or_initialize
     user.provider = auth_hash.provider
     user.uid = auth_hash.uid
     user.name = auth_hash.info.name
     user.oauth_token = auth_hash.credentials.token
     user.oauth_expires_at = Time.at(auth_hash.credentials.expires_at)
     user.save!
-
-    if user.save
-      return user
-    else
-      return nil
-    end
   end
 end
 
