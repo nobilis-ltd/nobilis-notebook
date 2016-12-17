@@ -34,7 +34,7 @@ class NotesController < ApplicationController
     require_user
 
     @note = @current_user.notes.find(params[:id])
-    @note.title = 'Untitled' if @note.title == ''
+    @note.title = 'Untitled' if @note.title.blank?
 
     if @note.update_attributes(note_params)
       flash[:success] = 'Note successfully updated.'
