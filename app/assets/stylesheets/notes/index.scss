@@ -1,0 +1,11 @@
+body.notes.index {
+  .note {
+    background: whitesmoke;
+    cursor: pointer;
+    height: 200px;
+
+    &:hover {
+      background: $ultra_light_grey;
+    }
+  }
+}

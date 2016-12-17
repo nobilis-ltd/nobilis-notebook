@@ -1,0 +1,12 @@
+// Import global styles
+@import '_base';
+@import 'flashes';
+
+// Import all other stylesheets below
+
+// layouts
+@import '../layouts/application_layout';
+@import '../layouts/site_layout';
+
+// notes
+@import 'notes/index';
