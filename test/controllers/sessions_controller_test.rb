@@ -7,7 +7,7 @@ class SessionsControllerTest < ActionController::TestCase
     assert_difference('User.count', 1) do
       get :create, provider: 'google'
     end
-
+    
     assert_not session[:user_id].nil?
     assert_redirected_to notes_path
   end

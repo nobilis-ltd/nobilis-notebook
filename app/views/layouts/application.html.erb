@@ -9,11 +9,33 @@
 </head>
   
 <body class="application_layout <%= controller_name %> <%= action_name %>">
+  
   <%= render 'partials/application/menu'%>
 
   <div class="main-container">
     <%= render 'partials/shared/flashes' %>
     <%= yield %>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="account_deletion_modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+        </div>
+        <div class="modal-body">
+          <p>You are about to permanently delete your account on Notebook.</p>
+          <p>All your notes and notebooks will be deleted. Users with whom you have shared notes and notebooks will no longer be able to view them.</p>
+          <p>Are you sure you wish to permanently delete your account?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= link_to 'Delete Account', user_path(id: current_user.to_param), class: 'btn btn-primary', method: :delete %>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
