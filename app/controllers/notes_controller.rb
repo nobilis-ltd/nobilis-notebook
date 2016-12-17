@@ -13,7 +13,7 @@ class NotesController < ApplicationController
     require_user
 
     @note = @current_user.notes.new(note_params)
-    @note.title = 'Untitled' if @note.title == ''
+    @note.title = 'Untitled' if @note.title.blank?
 
     if @note.save
       flash[:success] = 'Note successfully created.'
