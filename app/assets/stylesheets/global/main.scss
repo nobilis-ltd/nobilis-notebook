@@ -8,6 +8,9 @@
 @import '../layouts/application_layout';
 @import '../layouts/site_layout';
 
+// site
+@import 'site/home';
+
 // notes
 @import 'notes/index';
 @import 'notes/show';
