@@ -6,5 +6,21 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  # Setup umniauth in test_mode with mock hash
+  OmniAuth.config.test_mode = true
+  omniauth_hash = OmniAuth::AuthHash.new({
+    provider: 'google',
+    uid: '1738',
+    info: {
+      name: 'Test Testington',
+      email: 'likestotest.testinginc.com',
+      nickname: 'MasterTester'
+    },
+    credentials: {
+      token: 'token_for_testing',
+      expires_at: DateTime.new() + 3600
+    }
+  })
+  
+  OmniAuth.config.add_mock(:google, omniauth_hash)
 end
