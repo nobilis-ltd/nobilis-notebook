@@ -8,8 +8,6 @@ class SessionsController < ApplicationController
     unless current_user.present?
       user = User.from_omniauth(request.env['omniauth.auth'])
       session[:user_id] = user.id
-
-      redirect_to user_notes_path(user) and return
     end
     
     redirect_to user_notes_path(current_user)
