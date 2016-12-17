@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'notes/index'
-  get 'site/home'
+  resources :notes
 
   # Routes for Google auth 
   get "auth/:provider/callback" => "sessions#create"
