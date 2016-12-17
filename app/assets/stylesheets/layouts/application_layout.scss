@@ -1,16 +1,14 @@
 // application layout
 body.application_layout {
   background: $ultra_light_grey;
-
   $sidebar_width: 70px;
-
   margin-left: $sidebar_width;
 
   div.sidebar {
     $padding_top_bottom: 30px;
 
     padding: $padding_top_bottom 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: $sidebar_width;
@@ -43,7 +41,6 @@ body.application_layout {
       }
     }
 
-
     div.bottom-menu-items {
       position: absolute;
       bottom: $padding_top_bottom;
@@ -54,9 +51,10 @@ body.application_layout {
    padding: 50px;
 
    .holder {
-     background: $ultra_light_grey;
+     background: white;
      border-radius: 20px;
-     padding: 20px;
+     padding: 20px 50px;
+     box-shadow: 0px 1px 1px 1px lighten($light_grey, 10);
    }
  }
 }

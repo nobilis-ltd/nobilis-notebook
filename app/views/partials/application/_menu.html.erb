@@ -10,9 +10,9 @@
     </a>
   </li>
   <li class="menu-item">
-    <a href="#" data-toggle="tooltip" data-placement="right" title="My Notes">
+    <%= link_to notes_path, title: "My Notes", data:{ toggle: "tooltip", placement: "right" } do %>
       <span class="glyphicon glyphicon-list-alt"></span>
-    </a>
+    <% end %>
   </li>
 
   <div class="bottom-menu-items">
@@ -35,6 +35,7 @@
   <div class="modal-dialog">
     <div class="modal-content margin-top-200">
       <div class="modal-body">
+        <h3 class="no-margin-top">Delete your account?</h3>
         <p>You are about to permanently delete your account on Notebook.</p>
         <p>All your notes and notebooks will be deleted. Users with whom you have shared notes and notebooks will no longer be able to view them.</p>
         <p>Are you sure you wish to permanently delete your account?</p>

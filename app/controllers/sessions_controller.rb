@@ -2,14 +2,16 @@ class SessionsController < ApplicationController
 
   layout 'site'
   
-  # Method to store data from omniauth(google), store it in the database and create a user session
+  # Method to store data from omniauth(google), store it in the
+  # database and create a user session
   def create
     # only run login flow when there is no logged in user
     unless current_user.present?
       user = User.from_omniauth(request.env['omniauth.auth'])
       session[:user_id] = user.id
     end
-    
+
+    flash[:success] = "Welcome, #{current_user.name}"
     redirect_to notes_path
   end
 

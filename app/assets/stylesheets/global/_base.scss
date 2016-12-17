@@ -4,7 +4,7 @@
   $dark_red: darken($red, 10);
   $green: #2ecc71;
   $dark_green: #27ae60;
-  $ultra_light_grey: #f0f0f0;
+  $ultra_light_grey: lighten(#FFF8DC, 3);
   $light_grey: #dadada ;
   $grey: #777 ;
   $dark_grey: #333; 
@@ -12,6 +12,7 @@
 
   // used as border-radius for buttons and alerts
   $button_roundness: 7px;
+  // modals and cards
   $modal_roundness: 10px;
 
 // fonts
@@ -91,6 +92,20 @@
     background: $dark_grey;
     color: white;
   }
+  .light-grey-bg {
+    background: $light_grey;
+    color: white;
+  }
+  .ultra-light-grey-bg {
+    background: $ultra_light_grey;
+    color: white;
+  }
+  .whitesmoke-bg {
+    background: whitesmoke;
+  }
+  .light-whitesmoke-bg {
+    background: lighten(whitesmoke, 3);
+  }
 
 // Text-colors
   .primary-text {
@@ -113,6 +128,12 @@
   }
   .dark-grey-text {
     color: $dark_grey;
+  }
+  .light-grey-text {
+    color: $light_grey;
+  }
+  .ultra-light-grey-text {
+    color: $ultra_light_grey;
   }
 
 // buttons
@@ -140,11 +161,24 @@
       }
     }
     
+    &.dark-green-bg {
+      &:hover {
+        background: darken($dark_green, 3);
+        color: white;
+      }
+    }
+    
     &.grey-bg {
       &:hover {
         background: $dark_grey;
         color: white;
       }
+    }
+  }
+  // div or p to hold buttons
+  .actions {
+    .btn {
+      margin-bottom: 5px;
     }
   }
 
@@ -166,12 +200,14 @@
 
 // modals
   div.modal-content {
+    background: $ultra_light_grey;
     border-radius: $modal_roundness;
     padding: 2 * $modal_roundness;
   }
 
 // Utility Classes for margin and padding
   .no-margin { margin: 0; }
+  .no-margin-top { margin-top: 0; }
   .padded-top-200 { padding-top: 200px; }
   .padded-bottom-200 { padding-bottom: 200px; }
   .padded-top-50 { padding-top: 50px; }
@@ -187,5 +223,11 @@
   }
 
   hr {
-    border-color: $light_grey;
+    border-color: lighten($light_grey, 5);
+  }
+
+  div.card {
+    border-radius: $modal_roundness;
+    padding: 2 * $modal_roundness;
+    margin: 0 20px 20px 0;
   }
