@@ -6,10 +6,15 @@
       The easiest way to create and share simple documents. No heavy word processors, just plain ol’ markdown.
     </p>
     <p class="text-center margin-top-50">
-      <a href="/auth/google_oauth2" class="btn btn-lg red-bg">
-        <small><i class="socicon socicon-google"></i></small> 
-        &ensp; Sign in with Google
-      </a>
+      <% if user_logged_in? %>
+        <span>Signed in as <u><%= current_user.name %></u> <%= link_to '(Not you?)', signout_path %></span><br><br>
+        <%= link_to 'Go to your notes', notes_path, class:"btn btn-lg red-bg" %><br><br>
+      <% else %>
+        <%= link_to '/auth/google_oauth2', class:"btn btn-lg red-bg" do %>
+          <small><i class="socicon socicon-google"></i></small> 
+          &ensp; Sign in with Google
+        <% end %>
+      <% end %>
     </p>
   </div>
 </div>

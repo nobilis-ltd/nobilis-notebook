@@ -5,10 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= render 'partials/mobile_meta_tags' %>
+  <%= render 'partials/shared/mobile_meta_tags' %>
 </head>
 <body class="site_layout <%= controller_name %> <%= action_name %>">
   <div class="container">
+    <div class="col-sm-6 col-sm-offset-3 text-center margin-top-50">
+      <%= render 'partials/shared/flashes' %>
+    </div>
+  
     <%= yield %>
 
     <p class="margin-top-50 text-center light-grey-text">

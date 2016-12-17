@@ -5,37 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= render 'partials/mobile_meta_tags'%>
+  <%= render 'partials/shared/mobile_meta_tags'%>
 </head>
   
-<body class="application_layout">
-  <div class="sidebar">
-    <li class="menu-item">
-      <a href="#" data-toggle="tooltip" data-placement="right" title="New Note">
-        <span class="glyphicon glyphicon-pencil"></span>
-      </a>
-    </li>
-    <li class="menu-item">
-      <a href="#" data-toggle="tooltip" data-placement="right" title="My Notes">
-        <span class="glyphicon glyphicon-list-alt"></span>
-      </a>
-    </li>
-
-    <div class="bottom-menu-items">
-      <li class="menu-item">
-        <a href="/signout" data-toggle="tooltip" data-placement="right" title="Log Out">
-          <span class="glyphicon glyphicon-log-out"></span>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="#" data-toggle="modal" data-target="#account_deletion_modal" data-placement="right" title="Delete Account">
-          <span class="glyphicon glyphicon-trash"></span>
-        </a>
-      </li>
-    </div>
-  </div>
+<body class="application_layout <%= controller_name %> <%= action_name %>">
+  
+  <%= render 'partials/application/menu'%>
 
   <div class="main-container">
+    <%= render 'partials/shared/flashes' %>
     <%= yield %>
   </div>
 

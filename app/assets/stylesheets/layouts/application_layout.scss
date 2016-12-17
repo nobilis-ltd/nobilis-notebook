@@ -7,7 +7,7 @@ body.application_layout {
   margin-left: $sidebar_width;
 
   div.sidebar {
-    $padding_top_bottom: 20px;
+    $padding_top_bottom: 30px;
 
     padding: $padding_top_bottom 0;
     position: absolute;
@@ -25,22 +25,24 @@ body.application_layout {
       height: $menu_item_height;
       text-align: center;
       list-style-type: none;
-      border-bottom: $ultra_dark_grey;
+      border-bottom: thin darken($dark_grey, 3) solid;
 
       a {
         display: block;
         width: $sidebar_width;
         height: $menu_item_height;
         line-height: $menu_item_height;
-        color: white;
+        color: $light_grey;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 25px;
         
         &:hover {
+          color: $ultra_light_grey;
           background: $ultra_dark_grey;
         }
       }
     }
+
 
     div.bottom-menu-items {
       position: absolute;
