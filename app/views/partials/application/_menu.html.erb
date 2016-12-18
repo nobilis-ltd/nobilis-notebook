@@ -5,12 +5,12 @@
     </a>
   </li>
   <li class="menu-item">
-    <a href="<%= new_user_note_path(@current_user) %>" data-toggle="tooltip" data-placement="right" title="New Note">
+    <%= link_to new_user_note_path(current_user), title: "New Note", data:{ toggle: "tooltip", placement: "right" } do %>
       <span class="glyphicon glyphicon-pencil"></span>
-    </a>
+    <% end %>
   </li>
   <li class="menu-item">
-    <%= link_to notes_path, title: "My Notes", data:{ toggle: "tooltip", placement: "right" } do %>
+    <%= link_to user_notes_path(current_user), title: "My Notes", data:{ toggle: "tooltip", placement: "right" } do %>
       <span class="glyphicon glyphicon-list-alt"></span>
     <% end %>
   </li>

@@ -1,25 +1,46 @@
 <div class="row">
+  <div class="col-md-12">
+    <%= link_to user_notes_path(current_user), class:"btn grey-bg" do %>
+      <span class="glyphicon glyphicon-arrow-left"></span>&ensp;
+      Back to My Notes
+    <% end %>
+  </div>
+</div>
+
+<div class="row margin-top-50">
   <div class="col-sm-12">
-    <div class="col-sm-6 form-group">
-      <%= f.label :title, 'Note title' %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-    <div class="col-sm-6 text-right form-actions">
-      <%= f.submit btn_prompt, class: 'btn btn-md dark-green-bg' %>
+      <% if editing %>
+        Currently editing <strong><%= @note.title %></strong>, Last saved: <%= @note.updated_at.to_s(:long_ordinal)%>.
+      <% else %>
+        New note.
+      <% end %>
+      <br><br>
+    <%= f.text_field :title, class: 'form-control note-title', placeholder:"Title here ...", autocomplete: "off"%>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <p class="actions">
+      <%= f.submit btn_prompt, class: 'btn dark-green-bg' %>&ensp;
+      <%= link_to 'https://guides.github.com/features/mastering-markdown/#what', class: 'btn grey-bg', target:"_blank" do %>
+        <span class="glyphicon glyphicon-list"></span>&ensp;
+        Markdown Cheatsheet
+      <% end %>
+    </p> 
+  </div>
+  <div class="col-sm-6">
+    <p> Preview: </p>
+  </div>
+</div>
+<div class="row">
+  <div id="note-input" class="col-sm-6">
+    <div class="expandable-area" data-expandable-area>
+      <pre class="expandable-area-child"><span></span><br></pre>
+      <%= f.text_area :content, {class: 'form-control expandable-area-child', placeholder: "Type your notes in Markdown here"}%>
     </div>
   </div>
 
-  <div class="col-sm-12">
-    <div id="note-input" class="col-sm-6">
-      <div class="form-group">
-        <p>Prepare your note below</p>
-        <%= f.text_area :content, {class: 'form-control'} %>
-      </div>
-    </div>
-
-    <div id="note-preview" class=" col-sm-6">
-      <p>Preview</p>
-      <div class="preview"></div>
-    </div>
+  <div id="note-preview" class="note-preview col-sm-6 holder rendered-note">
   </div>
 </div>
