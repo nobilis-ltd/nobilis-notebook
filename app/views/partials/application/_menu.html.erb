@@ -29,7 +29,6 @@
   </div>
 </div>
 
-
 <!-- Delete Account Modal -->
 <div class="modal" id="account_deletion_modal">
   <div class="modal-dialog">
@@ -42,7 +41,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn grey-bg" data-dismiss="modal">Cancel</button>
-        <%= link_to 'Delete Account', user_path(id: current_user.to_param), class: 'btn red-bg', method: :delete %>
+        <%= link_to 'Delete Account', current_user, class: 'btn red-bg', method: :delete %>
       </div>
     </div>
   </div>

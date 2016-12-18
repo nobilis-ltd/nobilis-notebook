@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   def index
     require_user
+    
     @notes = current_user.notes
   end
 
@@ -8,6 +9,9 @@ class NotesController < ApplicationController
     require_user
 
     @note = current_user.notes.find(params[:id])
+
+    # pass note content to js controller for rendering
+    js noteContent: @note.content
   end
 
   def new
@@ -52,7 +56,11 @@ class NotesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @note = current_user.notes.find(params[:id])
+    @note.destroy
+    flash[:success] = 'The note has been deleted.'
+    redirect_to user_notes_path(current_user)
   end
 
 private
