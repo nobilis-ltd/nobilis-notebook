@@ -12,7 +12,7 @@ class NotesControllerTest < ActionController::TestCase
   test 'should not get index with no user' do
     User.delete_all
     session[:user_id] = nil
-    byebug
+    
     get :index, user_id: 'dssdsdsd'
     assert_redirected_to root_path
     assert_not_nil flash[:danger]
