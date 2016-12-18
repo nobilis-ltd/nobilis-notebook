@@ -1,13 +1,11 @@
 class NotesController < ApplicationController
+  before_action :require_user
+  
   def index
-    require_user
-    
     @notes = current_user.notes
   end
 
   def show
-    require_user
-
     @note = current_user.notes.find(params[:id])
 
     # pass note content to js controller for rendering
@@ -15,14 +13,10 @@ class NotesController < ApplicationController
   end
 
   def new
-    require_user
-
     @note = current_user.notes.new
   end
 
   def create
-    require_user
-
     @note = current_user.notes.new(note_params)
     @note.title = 'Untitled' if @note.title.blank?
 
@@ -36,14 +30,10 @@ class NotesController < ApplicationController
   end
 
   def edit
-    require_user
-
     @note = current_user.notes.find(params[:id])
   end
 
   def update
-    require_user
-
     @note = current_user.notes.find(params[:id])
     @note.title = 'Untitled' if @note.title.blank?
 
