@@ -1,0 +1,23 @@
+body.notes.index {
+  .note {
+    background: whitesmoke;
+    cursor: pointer;
+    height: 205px;
+
+    h4 {
+      letter-spacing: 0.5px;
+      line-height: 1.4em;
+    }
+
+    &.new {
+      background: darken(whitesmoke, 3); 
+      &:hover {
+        background: whitesmoke;
+      }
+    }
+
+    &:hover {
+      background: darken(whitesmoke, 3);
+    }
+  }
+}

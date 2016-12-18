@@ -8,8 +8,10 @@ class SessionsControllerTest < ActionController::TestCase
       get :create, provider: 'google'
     end
     
+    user = @controller.instance_eval { current_user }
+
     assert_not session[:user_id].nil?
-    assert_redirected_to notes_path
+    assert_redirected_to user_notes_path(user)
   end
 
   test 'should only run auth procedure if current user is not present' do

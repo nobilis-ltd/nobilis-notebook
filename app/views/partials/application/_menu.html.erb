@@ -5,14 +5,14 @@
     </a>
   </li>
   <li class="menu-item">
-    <a href="#" data-toggle="tooltip" data-placement="right" title="New Note">
+    <%= link_to new_user_note_path(current_user), title: "New Note", data:{ toggle: "tooltip", placement: "right" } do %>
       <span class="glyphicon glyphicon-pencil"></span>
-    </a>
+    <% end %>
   </li>
   <li class="menu-item">
-    <a href="#" data-toggle="tooltip" data-placement="right" title="My Notes">
+    <%= link_to user_notes_path(current_user), title: "My Notes", data:{ toggle: "tooltip", placement: "right" } do %>
       <span class="glyphicon glyphicon-list-alt"></span>
-    </a>
+    <% end %>
   </li>
 
   <div class="bottom-menu-items">
@@ -29,19 +29,19 @@
   </div>
 </div>
 
-
 <!-- Delete Account Modal -->
 <div class="modal" id="account_deletion_modal">
   <div class="modal-dialog">
     <div class="modal-content margin-top-200">
       <div class="modal-body">
+        <h3 class="no-margin-top">Delete your account?</h3>
         <p>You are about to permanently delete your account on Notebook.</p>
         <p>All your notes and notebooks will be deleted. Users with whom you have shared notes and notebooks will no longer be able to view them.</p>
         <p>Are you sure you wish to permanently delete your account?</p>
       </div>
       <div class="modal-footer">
-        <button class="btn grey-bg" data-dismiss="modal">Close</button>
-        <%= link_to 'Delete Account', user_path(id: current_user.to_param), class: 'btn red-bg', method: :delete %>
+        <button class="btn grey-bg" data-dismiss="modal">Cancel</button>
+        <%= link_to 'Delete Account', current_user, class: 'btn red-bg', method: :delete %>
       </div>
     </div>
   </div>

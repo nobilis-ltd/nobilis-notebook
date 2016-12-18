@@ -1,0 +1,3 @@
+<%= form_for @note, url: {controllers: :notes, action: :create} do |f| %>
+  <%= render partial: '/notes/form.html.erb', locals: {f: f, btn_prompt: 'Save Note', editing: false} %>
+<% end %>

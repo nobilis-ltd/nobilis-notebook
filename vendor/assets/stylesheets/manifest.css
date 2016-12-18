@@ -7,4 +7,8 @@
  *
  * Social icon Font: www.socicon.com
  *= require socicons.css
+ *
+ * Jquery toast plugin for flash messages
+ * https://github.com/kamranahmedse/jquery-toast-plugin/blob/master/dist/jquery.toast.min.js
+ *= require jquery-toast-plugin.min.css
 */

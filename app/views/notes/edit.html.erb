@@ -1,0 +1,3 @@
+<%= form_for @note, url: { controllers: :notes, action: :update } do |f| %>
+  <%= render partial: '/notes/form', locals: {f: f, btn_prompt: 'Save Changes', editing: true} %>
+<% end %>

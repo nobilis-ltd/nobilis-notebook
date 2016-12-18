@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //
+// For page specific javascript
+//= require paloma
+//
 // Require plugins from /vendor via manifest.js
 //= require manifest.js
 //

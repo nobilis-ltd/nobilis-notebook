@@ -15,6 +15,18 @@
   <div class="main-container">
     <%= render 'partials/shared/flashes' %>
     <%= yield %>
+    <div class="row text-center margin-top-50">
+      <div class="col-sm-12">
+        <hr>
+        <section id="logo">
+          <h3 class="text-center no-margin grey-text">Notebook</h3>
+          <p class="text-center margin-bottom-50">By Nobilis</p>
+        </section>
+      </div>
+    </div>
   </div>
+
+  <!-- Start js -->
+  <%= insert_paloma_hook %>
 </body>
 </html>

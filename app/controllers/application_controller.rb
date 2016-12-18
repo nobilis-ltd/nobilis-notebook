@@ -10,14 +10,14 @@ class ApplicationController < ActionController::Base
   end
 
   def user_logged_in?
-    current_user.present?
+    !current_user.blank?
   end
 
   # action to require user
   def require_user
     unless user_logged_in?
       flash[:danger] = 'You must sign in to view this page.'
-      redirect_to root_path
+      redirect_to root_path and return
     end
   end
 end
