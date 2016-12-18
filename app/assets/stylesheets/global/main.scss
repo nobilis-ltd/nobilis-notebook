@@ -5,13 +5,13 @@
 // Import all other stylesheets below
 
 // layouts
-@import '../layouts/application_layout';
-@import '../layouts/site_layout';
+@import 'layouts/application_layout';
+@import 'layouts/site_layout';
 
 // site
 @import 'site/home';
 
 // notes
 @import 'notes/index';
-@import 'notes/show';
-@import 'notes/form;'
+@import 'notes/rendered_note';
+@import 'notes/editor';

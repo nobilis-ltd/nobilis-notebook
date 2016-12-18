@@ -1,34 +1,3 @@
-<div class="breadcrumbs col-sm-12">
-  <%= link_to 'My Notes', user_notes_path(@current_user) %> / 
-  <a href="#">Edit Note</a>
-</div>
-
-<div class="page-header col-sm-12">
-  <h3>Edit Note</h3>
-</div>
-
-<%= form_for @note, url: {controllers: :notes, action: :update, method: :patch} do |f| %>
-  <%= render partial: '/notes/form.html.erb', locals: {f: f, btn_prompt: 'Save Changes'} %>
+<%= form_for @note, url: { controllers: :notes, action: :update } do |f| %>
+  <%= render partial: '/notes/form', locals: {f: f, btn_prompt: 'Save Changes', editing: true} %>
 <% end %>
-
-<script type="text/javascript">
-  var markdownModule = (function() {
-    var $doc = $(document)
-    var $note_input = $doc.find('#note-input textarea')
-    var $note_preview = $doc.find('#note-preview > div.preview')
-    var old_content = ''
-
-    function updatePreview() {
-      var new_content = $note_input.val()
-
-      if (new_content != old_content) {
-        $note_preview.html(markdown.toHTML(new_content))
-      }
-
-      setTimeout(updatePreview, 100)
-    }
-
-    return {init: updatePreview}
-  }) ()
-  markdownModule.init()
-</script>

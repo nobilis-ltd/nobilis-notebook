@@ -67,3 +67,6 @@ gem 'acts_as_hashids'
 
 # For Google authorization
 gem 'omniauth-google-oauth2'
+
+# For Controller Specific JavaScript
+gem 'paloma', '~> 5.0.0'
