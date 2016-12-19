@@ -1,6 +1,8 @@
 // handles rendering of markdown to preview and
 // growing the editor textarea
 var markdownEditorModule = (function() {
+  var $editorInput, $editorSizingSpan, $notePreview;
+
   function init(){
     cacheDom();
     updateEditor();
