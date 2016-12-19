@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - 2.2.6
+script: bundle exec rake && bundle exec rake spec:javascript
 notifications:
   slack: nobilis-ke:DqxT21PsCRH3b9VtlhQfS6fc
 deploy:
