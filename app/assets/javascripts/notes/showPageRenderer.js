@@ -1,4 +1,11 @@
+// Render a note into a div. Used in show pages.
 var noteShowPageRenderer = (function(){
+  // Markdown content of the note.
+  var noteContent;
+  
+  // target div where note will be rendered.
+  var $targetDiv;
+  
   function init(_noteContent){
     noteContent = _noteContent
     cacheDom();
