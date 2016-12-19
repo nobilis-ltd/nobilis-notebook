@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # For javascript tests
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   
   resources :users do
     resources :notes

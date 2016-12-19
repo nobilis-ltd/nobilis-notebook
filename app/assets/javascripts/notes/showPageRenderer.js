@@ -2,7 +2,6 @@
 var noteShowPageRenderer = (function(){
   // Markdown content of the note.
   var noteContent;
-  
   // target div where note will be rendered.
   var $targetDiv;
   
