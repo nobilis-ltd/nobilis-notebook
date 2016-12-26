@@ -18,7 +18,16 @@
         <p>
           <span class="glyphicon glyphicon-book"></span>&ensp;
           My Notes,
-          Last Edited: <%= @note.updated_at.to_s(:long_ordinal) %>.
+          Last Edited: <%= @note.updated_at.to_s(:long_ordinal) %>.<br>
+          <% if @note.public %>
+            <span class="glyphicon glyphicon-eye-open"></span>&ensp;
+            Public
+            <%= link_to '<small>(Make Private)</small>'.html_safe, privatise_user_note_path(current_user, @note) %>
+          <% else %>
+            <span class="glyphicon glyphicon-eye-close"></span>&ensp;
+            Private
+            <%= link_to '<small>(Make Public)</small>'.html_safe, publicise_user_note_path(current_user, @note) %>
+          <% end %>
         </p>
         <p class="actions">
           <%= link_to edit_user_note_path(current_user, @note), class:"btn grey-bg" do%>

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   # For javascript tests
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-  
+
   resources :users do
-    resources :notes
+    resources :notes do
+      member do
+        get 'publicise' => 'notes/set_public_status#publicise'
+        get 'privatise' => 'notes/set_public_status#privatise'
+      end
+    end
   end
 
   # Routes for Google auth

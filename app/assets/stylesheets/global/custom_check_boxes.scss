@@ -1,0 +1,57 @@
+// Custom Check boxes
+.custom-check-box {
+  position: relative;
+  display: inline-block !important;
+  cursor: pointer;
+  padding-left: 25px;
+
+  label {
+    cursor: pointer;
+  }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  input:checked ~ .control-indicator:after {
+    display: block;
+  }
+
+  input:checked ~ .control-indicator {
+    border-color: $dark_green;
+  }
+
+  .control-indicator {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: whitesmoke;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+
+    &:after {
+      position: absolute;
+      display: none;
+      content: '';
+
+      top: 2px;
+      left: 6px;
+      width: 5px;
+      height: 10px;
+      transform: rotate(45deg);
+      border: solid $dark_green;
+      border-width: 0 2px 2px 0;
+    }
+  }
+
+  &:hover, &:focus {
+    .control-indicator {
+      background-color: $light_grey;
+    }
+  }
+}

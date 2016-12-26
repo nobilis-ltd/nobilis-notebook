@@ -57,7 +57,8 @@ private
   def note_params
     params.require(:note).permit(
       :title,
-      :content
+      :content,
+      :public
     )
   end
 end

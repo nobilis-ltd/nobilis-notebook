@@ -49,11 +49,14 @@ class NotesControllerTest < ActionController::TestCase
       id: note.to_param,
       note: {
         title: 'Testing update',
-        content: '_slim_ yet *Bold*'
+        content: '_slim_ yet *Bold*',
+        public: true
       }
     }
     assert_redirected_to user_note_path(user, note)
-    assert_not_nil Note.find_by(title: 'Testing update')
+    fetched_note = Note.find_by(title: 'Testing update')
+    assert_not_nil fetched_note
+    assert fetched_note.public
   end
 
   test 'should delete note' do

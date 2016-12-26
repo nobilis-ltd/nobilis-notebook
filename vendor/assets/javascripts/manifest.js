@@ -9,4 +9,5 @@
 //
 // Jquery toast plugin for flash messages
 // https://github.com/kamranahmedse/jquery-toast-plugin/blob/master/dist/jquery.toast.min.js
-// = require jquery-toast-plugin.min.js
+//= require jquery-toast-plugin.min.js
+//
