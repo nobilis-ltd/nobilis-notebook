@@ -1,9 +1,12 @@
 .jq-toast-wrap {
+  width: 300px;
+
   .jq-toast-single {
     font-family: "Rubik", sans-serif;
     font-size: 1em;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-right: 15px;
     border-radius: $button-roundness;
 
     .close-jq-toast-single {

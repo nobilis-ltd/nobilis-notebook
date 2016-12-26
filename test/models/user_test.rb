@@ -15,7 +15,14 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "slug is created when user is saved" do
+    user = create(:user, name: "Foo Bar")
+    assert_equal "foo-bar", user.slug
+  end
+
+  test "slug appends number if duplicate" do
+    user = create(:user, name: "Foo Bar")
+    user2 = create(:user, name: "Foo Bar")
+    assert_match /foo-bar/, user2.slug
+  end
 end

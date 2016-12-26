@@ -17,31 +17,50 @@
 
   <div class="bottom-menu-items">
     <li class="menu-item">
+      <a href="#" data-toggle="modal" data-target="#settings_modal" data-placement="right" title="Settings">
+        <span class="glyphicon glyphicon-cog"></span>
+      </a>
+    </li>
+    <li class="menu-item">
       <%= link_to signout_path, title: "Log Out", data:{ toggle: "tooltip", placement: "right" } do %>
         <span class="glyphicon glyphicon-log-out"></span>
       <% end %>
     </li>
-    <li class="menu-item">
-      <a href="#" data-toggle="modal" data-target="#account_deletion_modal" data-placement="right" title="Delete Account">
-        <span class="glyphicon glyphicon-trash"></span>
-      </a>
-    </li>
   </div>
 </div>
 
-<!-- Delete Account Modal -->
-<div class="modal" id="account_deletion_modal">
+<!-- User Settings Modal -->
+<div class="modal" id="settings_modal">
   <div class="modal-dialog">
     <div class="modal-content margin-top-200">
       <div class="modal-body">
-        <h3 class="no-margin-top">Delete your account?</h3>
+        <h4>User Settings</h4>
+        <hr>
+        <%= form_for :user, url: { controller: "users", action: "update_slug", id: current_user.to_param }, method: :post do |f| %>
+          <div class="form-group">
+            <label for="">Public Slug</label>
+            <%= f.text_field :slug, value: current_user.slug, class: "form-control" %>
+            <span class="help-block">
+              This will be used to generate the url for your public notes.
+              Use lowercase letters and hyphens in place of spaces.
+            </span>
+          </div>
+          <p class="actions">
+            <%= f.submit 'Save', class: 'btn green-bg' %>
+          </p>
+        <% end %>
+        <br>
+        <h4 class="red-text">Delete Account</h4>
+        <hr>
         <p>You are about to permanently delete your account on Notebook.</p>
         <p>All your notes and notebooks will be deleted. Users with whom you have shared notes and notebooks will no longer be able to view them.</p>
         <p>Are you sure you wish to permanently delete your account?</p>
+        <p class="actions">
+          <%= link_to 'Yes, permanently delete my account and all my notes.', current_user, class: 'btn red-bg', method: :delete %>
+        </p>
       </div>
       <div class="modal-footer">
-        <button class="btn grey-bg" data-dismiss="modal">Cancel</button>
-        <%= link_to 'Delete Account', current_user, class: 'btn red-bg', method: :delete %>
+        <button class="btn grey-bg" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

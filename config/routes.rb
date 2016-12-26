@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   resources :users do
+    member do
+      post 'update_slug' => 'users#update_slug'
+    end
     resources :notes do
       member do
         get 'publicise' => 'notes/set_public_status#publicise'

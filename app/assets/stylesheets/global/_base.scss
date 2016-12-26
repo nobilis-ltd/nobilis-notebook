@@ -2,8 +2,8 @@
   $primary_color: #de1f26;
   $red: #de1f26;
   $dark_red: darken($red, 10);
-  $green: #2ecc71;
-  $dark_green: #27ae60;
+  $green: #31B253;
+  $dark_green: darken($green,5);
   $ultra_light_grey: lighten(#FFF8DC, 3);
   $light_grey: #dadada ;
   $grey: #777 ;
@@ -182,6 +182,27 @@
     }
   }
 
+// Forms
+
+  .form-control {
+    border-radius: $button_roundness;
+    box-shadow: none;
+    border-color: $light_grey;
+    padding: 2 * $button_roundness;
+    height: auto;
+    margin: 10px 0px;
+
+    &:hover, &:focus {
+      box-shadow: none;
+      border-color: $grey;
+    }
+  }
+
+  .help-block {
+    font-size: smaller;
+    margin-top: -5px;
+  }
+
 // Alerts
   .alert {
     border-radius: $button_roundness;
@@ -230,3 +251,11 @@
     padding: 2 * $modal_roundness;
     margin: 0 20px 20px 0;
   }
+
+  // links 
+    a {
+      &:hover {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
