@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :require_user
-  
+
   def index
     @notes = current_user.notes
   end

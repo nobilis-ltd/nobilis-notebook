@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   layout 'site'
-  
+
   # Method to store data from omniauth(google), store it in the
   # database and create a user session
   def create
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       user = User.from_omniauth(request.env['omniauth.auth'])
       session[:user_id] = user.id
     end
-    
+
     flash[:success] = "Welcome, #{current_user.name}"
     redirect_to user_notes_path(current_user)
   end

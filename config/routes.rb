@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'note_books/index'
+
+  get 'note_books/show'
+
+  get 'note_books/new'
+
+  get 'note_books/edit'
+
   get 'notebooks/index'
 
   # For javascript tests
