@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 gem 'rake', '10.5.0'
+gem 'dotenv-rails'
 
 # SERVER:
 gem 'thin'

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notebooks/index'
+
   # For javascript tests
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   
