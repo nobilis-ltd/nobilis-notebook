@@ -3,8 +3,8 @@
 <% else %>
   <ul id = "note_books">
      <% @note_books.each do |c| %>
-     <li><%= link_to c.name, {:action => 'show', :id => c.id} %></li>
+     <li><%= link_to c.name, user_note_book_path(current_user, @note_book) %></li>
      <% end %>
   </ul>
   <% end %>
-  <p><%= link_to "Add new Notebook", {:action => 'create' }%></p>
+  <p><%= link_to "Add new Notebook", new_user_note_book_path(current_user) , class:"btn btn-lg red-bg"%></p>
