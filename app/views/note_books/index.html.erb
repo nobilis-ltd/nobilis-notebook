@@ -1,2 +1,10 @@
-<h1>NoteBooks#index</h1>
-<p>Find me in app/views/note_books/index.html.erb</p>
+<% if @note_books.blank? %>
+  <p>You have not created any notebooks yet.</p>
+<% else %>
+  <ul id = "note_books">
+     <% @note_books.each do |c| %>
+     <li><%= link_to c.name, {:action => 'show', :id => c.id} %></li>
+     <% end %>
+  </ul>
+  <% end %>
+  <p><%= link_to "Add new Notebook", {:action => 'create' }%></p>
