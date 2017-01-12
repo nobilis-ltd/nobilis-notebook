@@ -1,7 +1,7 @@
 class NoteBooksController < ApplicationController
   before_action :require_user
   def index
-    @note_book = NoteBook.all
+    @note_books = NoteBook.all
   end
 
   def show
@@ -9,9 +9,8 @@ class NoteBooksController < ApplicationController
   end
 
   def new
-    @note_book = current_user.NoteBook.new
-    # grab current notes from the db associated with this user
-    @notes = Note.all
+    @note_book = current_user.note_books.new
+
   end
 
   def edit
@@ -25,7 +24,7 @@ class NoteBooksController < ApplicationController
     if @note_book.save
       flash[:success] = 'Your notebook has been created.'
 
-      redirect_to :action => 'index'
+      redirect_to user_note_book_path(current_user, @note_book)
     else
       render :new
     end
@@ -34,7 +33,7 @@ class NoteBooksController < ApplicationController
   private
     def note_book_params
       params.require(:note_book).permit(
-        :name
+        :title
       )
     end
 end
