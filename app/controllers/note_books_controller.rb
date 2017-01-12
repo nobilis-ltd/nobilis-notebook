@@ -10,6 +10,8 @@ class NoteBooksController < ApplicationController
 
   def new
     @note_book = current_user.NoteBook.new
+    # grab current notes from the db associated with this user
+    @notes = Note.all
   end
 
   def edit
@@ -23,7 +25,7 @@ class NoteBooksController < ApplicationController
     if @note_book.save
       flash[:success] = 'Your notebook has been created.'
 
-      redirect_to user_note_book_path(current_user, @note_book)
+      redirect_to :action => 'index'
     else
       render :new
     end
