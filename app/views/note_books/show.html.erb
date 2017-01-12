@@ -1,2 +1,13 @@
-<h1>NoteBooks#show</h1>
-<p>Find me in app/views/note_books/show.html.erb</p>
+<div class="row margin-bottom-50">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>My Notebooks</h1>
+          <%= @note_book.name %>
+
+          <hr>
+          <%= link_to 'Create more Notebooks', new_user_note_book_path(current_user), class:"btn btn-lg green-bg"%>
+        </div>
+      </div>
+    </div>
+  </div>
