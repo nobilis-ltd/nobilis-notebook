@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :notes
     resources :note_books do
       # note_id = @note.id
-      get '/add_note/:note_id' => "note_books#add_note"
+      get '/add_note/:note_id' => "note_books#add_note", as: :add_note
     end
 
   end
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
 
+  get '/add_note/:note_id' => 'note_books#add_note', as: :add_note
   root 'site#home'
 end

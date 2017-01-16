@@ -38,8 +38,8 @@ class NoteBooksController < ApplicationController
     end
   end
 
-  def add_note
-    note = current_user.notes.find(params[:note_id])
+  def add_note(current_user, note_book, note)
+    @note = current_user.notes.find(params[:note_id])
     note.note_book_id = params[:id]
     note.save!
   end
