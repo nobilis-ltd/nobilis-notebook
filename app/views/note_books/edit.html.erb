@@ -1,2 +1,23 @@
-<h1>NoteBooks#edit</h1>
-<p>Find me in app/views/note_books/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to user_note_books_path(current_user), class:"btn grey-bg" do %>
+      <span class="glyphicon glyphicon-arrow-left"></span>&ensp;
+      Back to My Notebooks
+    <% end %>
+  </div>
+</div>
+
+<div class="row margin-top-50">
+
+  <div class="col-sm-12">
+    <%= form_for @note_book, url: {controller: 'note_books', action: 'update'} do |f|%>
+    <div class="form-group">
+      <%= f.label :notebook %><br>
+      <%= f.text_field :title, class:'form-control', placeholder: 'Notebook title'%><br>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Save changes", class:'btn red-bg' %>
+    </div>
+    <% end %>
+  </div>

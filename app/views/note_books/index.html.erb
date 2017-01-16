@@ -1,2 +1,15 @@
-<h1>NoteBooks#index</h1>
-<p>Find me in app/views/note_books/index.html.erb</p>
+<div class="row margin-top-50">
+  <%= link_to 'New notebook', new_user_note_book_path(current_user), class: 'btn green-bg'%><br>
+  <hr>
+  <% @note_books.each do |n| %>
+  <div class="col-sm-4 col-md-4 col-lg-3 card note", onclick="Turbolinks.visit('<%= user_note_book_path(current_user, n)%>')">
+    <h4 class="grey-text"><%= n.title.truncate(50) %></h4>
+    <p>
+      Last edited: <%= n.updated_at.to_s(:long_ordinal) %>
+    </p><br>
+  </div>
+  <% end %>
+
+
+
+</div>

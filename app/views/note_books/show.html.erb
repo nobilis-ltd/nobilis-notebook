@@ -1,2 +1,53 @@
-<h1>NoteBooks#show</h1>
-<p>Find me in app/views/note_books/show.html.erb</p>
+<div class="row margin-bottom-50">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to user_note_books_path(current_user), class:"btn grey-bg" do %>
+          <span class="glyphicon glyphicon-arrow-left"></span>&ensp;
+          Back to My Notebooks
+        <% end %>
+        <hr>
+      </div>
+      <div class="col-xs-1">
+        <h1 class="text-center">
+          <span class="glyphicon glyphicon-file"></span>
+        </h1>
+      </div>
+      <div class="col-xs-11">
+        <h3><%= @note_book.title %></h3>
+        <p>
+          <span class="glyphicon glyphicon-book"></span>&ensp;
+          My Notebooks,
+          Last Edited: <%= @note_book.updated_at.to_s(:long_ordinal) %>.
+        </p>
+        <p class="actions">
+          <%= link_to edit_user_note_book_path(current_user, @note_book), class:"btn grey-bg" do%>
+            <span class="glyphicon glyphicon-pencil"></span>&ensp;Edit Notebook
+          <% end %>
+
+          <a href="#" data-toggle="modal" data-target="#note_book_deletion_modal" class="btn red-bg">
+            <span class="glyphicon glyphicon-trash"></span>&ensp;Delete Notebook
+          </a>
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Notebook Modal -->
+<div class="modal" id="note_book_deletion_modal">
+  <div class="modal-dialog">
+    <div class="modal-content margin-top-200">
+      <div class="modal-body">
+        <h3 class="no-margin-top">Delete this note?</h3>
+        <p>You are about to permanently delete your notebook: <strong><%= @note_book.title %></strong>.</p>
+        <p>This action is irreversible. Are you sure you wish to proceed?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn grey-bg" data-dismiss="modal">Cancel</button>
+        <%= link_to 'Delete Notebook', user_note_book_path(current_user, @note_book), class: 'btn red-bg', method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
