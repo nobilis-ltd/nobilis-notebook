@@ -1,0 +1,2 @@
+module NoteBookHelper
+end

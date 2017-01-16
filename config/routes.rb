@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :notes
-    resources :note_books
 
   end
 
@@ -14,10 +13,6 @@ Rails.application.routes.draw do
   get "auth/:provider/callback" => "sessions#create"
   get "auth/failure" => "sessions#auth_failure"
   get "signout" => "sessions#destroy", as: :signout
-
-  # Routes for note_books
-  # get "note_book" => "note_books#index"
-  # get "/note_book/:id" => "note_books#create", as:'new_user_note_book_path'
 
   resources :sessions, only: [:create, :destroy]
 
