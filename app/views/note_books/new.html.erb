@@ -8,6 +8,10 @@
     </div>
     <div class="form-group">
       <%= f.submit "Create notebook", class:'btn red-bg' %>
+      <%= link_to user_note_books_path(current_user), class:"btn grey-bg" do %>
+        <span class="glyphicon glyphicon-arrow-left"></span>&ensp;
+        Back to My Notebooks
+      <% end %>
     </div>
 
     <% end %>
