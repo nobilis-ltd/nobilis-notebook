@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :notes
-    resources :note_books
+    resources :note_books do
+      # note_id = @note.id
+      get '/add_note/:note_id' => "note_books#add_note"
+    end
 
   end
 
