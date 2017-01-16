@@ -28,6 +28,9 @@
           <a href="#" data-toggle="modal" data-target="#note_book_deletion_modal" class="btn red-bg">
             <span class="glyphicon glyphicon-trash"></span>&ensp;Delete Notebook
           </a>
+          <%= link_to user_note_path, class: 'btn green-bg' do%>
+            <span class="glyphicon glyphicon-plus"></span>&ensp;Add Note
+          <% end %>
 
         </p>
       </div>
