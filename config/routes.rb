@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
 
+  get 'note_book/index'
+
+  get 'note_book/show'
+
+  get 'note_book/create'
+
+  get 'note_book/new'
+
+  get 'note_book/edit'
+
+  get 'note_book/update'
+
   # For javascript tests
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
