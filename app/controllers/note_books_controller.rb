@@ -38,6 +38,12 @@ class NoteBooksController < ApplicationController
     end
   end
 
+  def add_note
+    note = current_user.notes.find(params[:note_id])
+    note.note_book_id = params[:id]
+    note.save!
+  end
+
   def destroy
     @note_book = NoteBook.find(params[:id])
     @note_book.destroy
