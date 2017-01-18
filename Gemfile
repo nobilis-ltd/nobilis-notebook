@@ -28,9 +28,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
 
-  # For loading of environment variables from .env file
-  gem 'dotenv-rails'
-
   # For running JavaScript tests
   gem 'jasmine-rails'
 end

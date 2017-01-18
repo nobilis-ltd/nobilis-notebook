@@ -17,7 +17,7 @@
         <h3><%= @note.title %></h3>
         <p>
           <span class="glyphicon glyphicon-book"></span>&ensp;
-          My Notes,
+          <%= @note_book.present? ? @note_book.title :  'My Notes' %>,
           Last Edited: <%= @note.updated_at.to_s(:long_ordinal) %>.
         </p>
         <p class="actions">

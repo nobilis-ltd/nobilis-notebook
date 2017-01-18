@@ -1,13 +1,12 @@
 class NoteBooksController < ApplicationController
+
   def index
     @note_books = NoteBook.all
   end
+
   def show
     @note_book = NoteBook.find(params[:id])
-  end
-
-  def edit
-    @note_book = NoteBook.find(params[:id])
+    @notes = @note_book.notes
   end
 
   def new
@@ -23,6 +22,10 @@ class NoteBooksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @note_book = NoteBook.find(params[:id])
   end
 
   def update

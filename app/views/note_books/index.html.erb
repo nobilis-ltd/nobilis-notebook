@@ -1,16 +1,14 @@
 <div class="row margin-top-50">
   <%= link_to 'New notebook', new_user_note_book_path(current_user), class: 'btn green-bg'%>
-  <%=link_to 'My Notes', user_notes_path(current_user), class: 'btn red-bg' %>
+  <%= link_to 'My Notes', user_notes_path(current_user), class: 'btn red-bg' %>
   <hr>
   <% @note_books.each do |n| %>
-  <div class="col-sm-4 col-md-4 col-lg-3 card note", onclick="Turbolinks.visit('<%= user_note_book_path(current_user, n)%>')">
-    <h4 class="grey-text"><%= n.title.truncate(50) %></h4>
-    <p>
-      Last edited: <%= n.updated_at.to_s(:long_ordinal) %>
-    </p><br>
-  </div>
+    <div class="col-sm-4 col-md-4 col-lg-3 card note" onclick="Turbolinks.visit('<%= user_note_book_path(current_user, n.to_param)%>')">
+      <h4 class="grey-text"><%= n.title.truncate(50) %></h4>
+      <p>
+        Last edited: <%= n.updated_at.to_s(:long_ordinal) %>
+      </p><br>
+    </div>
   <% end %>
-
-
 
 </div>
