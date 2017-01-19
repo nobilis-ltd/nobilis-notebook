@@ -14,6 +14,8 @@
 #
 
 class NoteBook < ActiveRecord::Base
+  acts_as_hashids secret: "notebook-notebook", length: 6
+  
   belongs_to :user
   has_many :notes
 end
