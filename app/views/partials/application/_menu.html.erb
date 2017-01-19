@@ -5,16 +5,25 @@
     </a>
   </li>
   <li class="menu-item">
-    <%= link_to new_user_note_book_path(current_user), title: "New Notebook", data:{ toggle: "tooltip", placement: "right" } do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-    <% end %>
-  </li>
-  <li class="menu-item">
-    <%= link_to user_note_books_path(current_user), title: "My Notebooks", data:{ toggle: "tooltip", placement: "right" } do %>
-      <span class="glyphicon glyphicon-list-alt"></span>
-    <% end %>
-  </li>
-
+   <%= link_to new_user_note_book_path(current_user), title: "New Notebook", data:{ toggle: "tooltip", placement: "right" } do %>
+     <span class="glyphicon glyphicon-plus"></span>
+   <% end %>
+ </li>
+ <li class="menu-item">
+   <%= link_to user_note_books_path(current_user), title: "My Notebooks", data:{ toggle: "tooltip", placement: "right" } do %>
+     <span class="glyphicon glyphicon-book"></span>
+   <% end %>
+ </li>
+ <li class="menu-item">
+   <%= link_to user_notes_path(current_user), title: "My Notes", data:{ toggle: "tooltip", placement: "right" } do %>
+     <span class="glyphicon glyphicon-list-alt"></span>
+   <% end %>
+ </li>
+ <li class="menu-item">
+   <%= link_to new_user_note_path(current_user), title: "New Note", data:{ toggle: "tooltip", placement: "right" } do %>
+     <span class="glyphicon glyphicon-pencil"></span>
+   <% end %>
+</li>
   <div class="bottom-menu-items">
     <li class="menu-item">
       <%= link_to signout_path, title: "Log Out", data:{ toggle: "tooltip", placement: "right" } do %>
