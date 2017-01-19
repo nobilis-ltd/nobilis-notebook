@@ -62,7 +62,6 @@ class NoteBooks::NotesController < ApplicationController
         :content
       )
     end
-  end
 
   def get_note_book
     @note_book = NoteBook.find(params[:note_book_id])
