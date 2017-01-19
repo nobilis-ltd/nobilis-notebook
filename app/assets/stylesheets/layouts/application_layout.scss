@@ -16,7 +16,7 @@ body.application_layout {
     border-right: $ultra_dark_grey;
     color: white;
     height: 100vh;
-    
+
     li.menu-item {
       $menu_item_height: 60px;
 
@@ -33,7 +33,7 @@ body.application_layout {
         color: $light_grey;
         text-decoration: none;
         font-size: 25px;
-        
+
         &:hover {
           color: $ultra_light_grey;
           background: $ultra_dark_grey;

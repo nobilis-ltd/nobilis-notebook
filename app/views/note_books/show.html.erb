@@ -28,9 +28,17 @@
           <a href="#" data-toggle="modal" data-target="#note_book_deletion_modal" class="btn red-bg">
             <span class="glyphicon glyphicon-trash"></span>&ensp;Delete Notebook
           </a>
-          <%= link_to user_note_book_add_note_path(user_id: @user.to_param, id: @note_book.to_param, note_id: @note.to_param), class: 'btn green-bg' do%>
-            <span class="glyphicon glyphicon-plus"></span>&ensp;Add Note
-          <% end %>
+          <% @notes.each do |note| %>
+              <li>
+                <%= note.title %>
+                <%= link_to 'Show Note',
+                    user_note_book_note_path(
+                      current_user,
+                      @note_book,
+                      note
+                    ) %>
+              </li>
+            <% end%>
 
         </p>
       </div>

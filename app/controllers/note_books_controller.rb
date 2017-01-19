@@ -4,6 +4,7 @@ class NoteBooksController < ApplicationController
   end
   def show
     @note_book = NoteBook.find(params[:id])
+    @notes = @note_book.notes
   end
 
   def edit
@@ -42,7 +43,7 @@ class NoteBooksController < ApplicationController
     @note = current_user.notes.find(params[:note_id])
     note.note_book_id = params[:id]
     note.save!
-  end
+end
 
   def destroy
     @note_book = NoteBook.find(params[:id])
