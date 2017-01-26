@@ -7,9 +7,11 @@
 // layouts
 @import 'layouts/application_layout';
 @import 'layouts/site_layout';
+@import 'layouts/one_page_app_layout';
 
 // site
 @import 'site/home';
+@import 'site/app';
 
 // notes
 @import 'notes/index';

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html class="one_page_app">
+<head>
+  <title>Notebook - by Nobilis</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'partials/shared/mobile_meta_tags'%>
+</head>
+  
+<body class="one_page_app_layout <%= controller_name %> <%= action_name %>">
+	<div class="main-container">
+		<%= yield %>
+	</div>
+
+	<!-- Start js -->
+	<%= insert_paloma_hook %>
+</body>
+</html>

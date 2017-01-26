@@ -1,0 +1,41 @@
+body.one_page_app_layout.site.app {
+	div.main-container {
+		position: relative;
+
+		#admin-n-nav, #main-workspace {
+			height: 100%;
+			float: left;
+		}
+
+		#admin-n-nav {
+			width: 20%;
+			background-color: $light_grey;
+
+			#admin-sec, #nav-sec {
+				padding-right: 5%;
+				padding-left: 5%;
+			}
+
+			#admin-sec {
+				height: 20%;
+				background-color: rgba($primary_color, .7);
+			}
+
+			#nav-sec {
+				height: 80%;
+
+				#inner-nav-sec {
+					width: 94%;
+					height: 97%;
+					margin: 0 auto;
+					
+					background-color: rgba($ultra_light_grey, .85);
+				}
+			}
+		}
+
+		#main-workspace {
+			width: 80%;
+		}
+	}
+}

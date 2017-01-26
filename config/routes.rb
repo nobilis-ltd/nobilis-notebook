@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
 
+	get '/app' => 'site#app'
   root 'site#home'
 end
