@@ -17,6 +17,9 @@ class SessionsController < ApplicationController
   
   # Method to create a dummy user in the development env
 	def create_dev_session
+		# redirect to root if not in dev environment
+		redirect_to root_path unless Rails.env == 'development'
+
 		# Get user name from .env file
 		username = ENV['DEV_USER']
 
