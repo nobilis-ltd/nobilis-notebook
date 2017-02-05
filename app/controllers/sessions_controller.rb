@@ -14,6 +14,26 @@ class SessionsController < ApplicationController
     flash[:success] = "Welcome, #{current_user.name}"
     redirect_to user_notes_path(current_user)
   end
+  
+  # Method to create a dummy user in the development env
+	def create_dev_session
+		# redirect to root if not in dev environment
+		redirect_to root_path unless Rails.env == 'development'
+
+		# Get user name from .env file
+		username = ENV['DEV_USER']
+
+		# if user with username doesn't exist, create one
+		user = User.find_by(name: username)
+		unless user.present?
+			user = User.new(name: username)
+			user.save!
+		end
+
+		# sign in user and redirect to notes
+		session[:user_id] = user.id
+		redirect_to user_notes_path(current_user)
+	end
 
   # Method to destroy a user session
   def destroy

@@ -3,6 +3,10 @@ require 'test_helper'
 class SessionsControllerTest < ActionController::TestCase
   setup :set_omniauth
 
+  def set_omniauth
+    request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:google]
+  end
+
   test 'should successfully login user via google' do
     assert_difference('User.count', 1) do
       get :create, provider: 'google'
@@ -37,9 +41,5 @@ class SessionsControllerTest < ActionController::TestCase
 
     assert_redirected_to root_path
     assert_not_nil flash[:danger]
-  end
-
-  def set_omniauth
-    request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:google]
   end
 end
