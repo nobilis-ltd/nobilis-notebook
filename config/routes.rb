@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  # Route for login in development environment
+	if Rails.env == 'development'
+		get '/dev_login' => 'sessions#create_dev_session'
+	end
+
   # For javascript tests
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   
