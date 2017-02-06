@@ -1,0 +1,62 @@
+<div class="row margin-bottom-50">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to user_notes_path(current_user), class:"btn grey-bg" do %>
+          <span class="glyphicon glyphicon-arrow-left"></span>&ensp;
+          Back to My Notes
+        <% end %>
+        <hr>
+      </div>
+      <div class="col-xs-1">
+        <h1 class="text-center">
+          <span class="glyphicon glyphicon-file"></span>
+        </h1>
+      </div>
+      <div class="col-xs-11">
+        <h3><%= @note.title %></h3>
+        <p>
+          <span class="glyphicon glyphicon-book"></span>&ensp;
+          <%= @note_book.present? ? @note_book.title : 'My Notes' %>,
+          Last Edited: <%= @note.updated_at.to_s(:long_ordinal) %>.
+        </p>
+        <p class="actions">
+          <%= link_to edit_user_note_book_note_path(current_user, @note_book, @note), class:"btn grey-bg" do%>
+            <span class="glyphicon glyphicon-pencil"></span>&ensp;Edit Note
+          <% end %>
+
+          <a href="#" data-toggle="modal" data-target="#note_deletion_modal" class="btn red-bg">
+            <span class="glyphicon glyphicon-trash"></span>&ensp;Delete Note
+          </a>
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="holder col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-sm-12 rendered-note" data-render-div>
+        Loading...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Note Modal -->
+<div class="modal" id="note_deletion_modal">
+  <div class="modal-dialog">
+    <div class="modal-content margin-top-200">
+      <div class="modal-body">
+        <h3 class="no-margin-top">Delete this note?</h3>
+        <p>You are about to permanently delete your note: <strong><%= @note.title %></strong>.</p>
+        <p>This action is irreversible. Are you sure you wish to proceed?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn grey-bg" data-dismiss="modal">Cancel</button>
+        <%= link_to 'Delete Note', user_note_path(current_user, @note), class: 'btn red-bg', method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
