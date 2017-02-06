@@ -8,29 +8,29 @@ class NoteBooks::NotesController < ApplicationController
 
       # pass note content to js controller for rendering
       js noteContent: @note.content
-        render 'notes/show'
+
     end
 
     def new
       @note = @note_book.notes.new
-        render 'notes/new'
+
     end
 
     def edit
       @note = @note_book.notes.find(params[:id])
-      render 'notes/edit'
     end
 
     def create
       @note = @note_book.notes.new(note_params)
       @note.title = 'Untitled' if @note.title.blank?
+      @note.user = current_user
 
       if @note.save
         flash[:success] = 'Your note has been saved.'
 
-        redirect_to user_note_path(current_user, @note_book)
+        redirect_to user_note_book_note_path(current_user, @note_book, @note)
       else
-        render 'notes/new'
+        render 'new'
       end
     end
 
@@ -44,7 +44,7 @@ class NoteBooks::NotesController < ApplicationController
 
         redirect_to user_note_book_note_path(current_user, @note_book, @note)
       else
-        render 'notes/edit'
+        render 'edit'
       end
     end
 
